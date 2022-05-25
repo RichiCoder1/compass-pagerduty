@@ -1,0 +1,44 @@
+modules:
+  compass:globalPage:
+  - key: settings-page
+    function: global
+    title: compass-pagerduty
+  compass:dataProvider:
+  - key: data-provider
+    function: dataProvider
+    callback:
+      function: dataProviderCallback
+    linkTypes:
+    - on-call
+    domains:
+    - '*.pagerduty.com'
+  webtrigger:
+  - key: trigger-sync
+    function: triggerSync
+  scheduledTrigger:
+  - key: scheduled-trigger-sync
+    function: triggerSync
+    interval: day
+  function:
+  - key: global
+    handler: global-page.run
+  - key: dataProvider
+    handler: data-provider.dataProvider
+  - key: dataProviderCallback
+    handler: data-provider.dataProviderCallback
+  - key: triggerSync
+    handler: data-provider.triggerSync
+
+permissions:
+  scopes:
+  - storage:app
+  - write:component:compass
+  - write:event:compass
+  - write:metric:compass
+  - read:metric:compass
+  external:
+    fetch:
+      backend:
+      - '*.pagerduty.com'
+app:
+  id: ari:cloud:ecosystem::app/cdfc4983-6e80-40ab-8a5c-2d45ad880d17
