@@ -5,7 +5,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@atlassian/forge-graphql": "^7.0.0",
+    "@atlassian/forge-graphql": "^13.3.9",
     "@forge/ui": "^1.2.0",
     "@pagerduty/pdjs": "^2.2.4",
     "date-fns": "^2.28.0"
